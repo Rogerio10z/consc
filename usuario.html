@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Incluir Novo Carro</title>
+    <link rel="stylesheet" href="incluir-carro.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-container">
+        <a href="index.html" class="logo"><img src="logo.png" alt="Logo" /></a>
+        <ul class="nav-link">
+          <li><a href="index.html" style="--i: 1">Inicio</a></li>
+          <li>
+            <a href="incluir-carro.html" class="active" style="--i: 2"
+              >Incluir Carro</a
+            >
+          </li>
+          <li><a href="dashboard.html" style="--i: 3">Dashboard</a></li>
+          <li><a href="carros.html" style="--i: 4">Carros</a></li>
+          <li><a href="contatos.html" style="--i: 5">Contatos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>Incluir Novo Carro</h1>
+      <form id="form-carro" enctype="multipart/form-data">
+        <label for="imagem">Imagem do Carro:</label>
+        <input
+          type="file"
+          id="imagem"
+          name="imagem"
+          accept="image/*"
+          required
+        />
+
+        <label for="descricao">Descrição:</label>
+        <textarea
+          id="descricao"
+          name="descricao"
+          placeholder="Descrição detalhada do carro"
+          required
+        ></textarea>
+
+        <label for="valor">Valor (R$):</label>
+        <input
+          type="number"
+          id="valor"
+          name="valor"
+          min="0"
+          step="0.01"
+          placeholder="Ex: 45000.00"
+          required
+        />
+
+        <label for="marca">Marca:</label>
+        <input
+          type="text"
+          id="marca"
+          name="marca"
+          placeholder="Ex: Toyota, Honda"
+          required
+        />
+
+        <label for="cor">Cor:</label>
+        <input
+          type="text"
+          id="cor"
+          name="cor"
+          placeholder="Ex: Vermelho, Preto"
+          required
+        />
+
+        <label for="ano">Ano:</label>
+        <input
+          type="number"
+          id="ano"
+          name="ano"
+          min="1900"
+          max="2099"
+          step="1"
+          placeholder="Ex: 2023"
+          required
+        />
+
+        <button type="submit" class="submit-btn">Adicionar Carro</button>
+      </form>
+
+      <div class="link-dashboard">
+        <p>
+          Ir para o <a href="dashboard.html">Dashboard de Vendas e Gráficos</a>
+        </p>
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("form-carro")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Carro incluído com sucesso! (Implementar conexão com backend)"
+          );
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
